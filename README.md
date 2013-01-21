@@ -4,7 +4,7 @@ Classes using Knockout.js, like so:
 ```
 class Animal
   ko.hasComputedProperties @
-  computed "greeting", ->
+  @computed "greeting", ->
     "#{@name()} says hi!"
 
   constructor:
