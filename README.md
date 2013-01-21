@@ -16,6 +16,6 @@ animal.greeting() # => "Jaguar says hi!"
 animal.name("Giant Squid")
 animal.greeting() # => "Giant Squid says hi!"
 
-animal.getComputed("greeting") # => (the raw computed observable object)
+animal.getComputed("greeting") # => (the raw computed observable object, for form fields and the like)
 ```
 
