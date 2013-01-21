@@ -1,8 +1,21 @@
-This is a Node.js project template written in CoffeeScript. It's set
-up with a Cakefile for building files in `src/` to `lib/` and running
-tests with nodeunit. There's also a `docs` task that generates Docco
-documentation from the source in `src/`.
+This project allows you to use computed attributes with Coffeescript
+Classes using Knockout.js, like so:
 
-Released under the MIT license.
+```
+class Animal
+  ko.hasComputedProperties @
+  computed "greeting", ->
+    "#{@name()} says hi!"
 
-Sam Stephenson <<sstephenson@gmail.com>>
+  constructor:
+    @name = ko.observable("Jaguar")
+
+animal = new Animal
+animal.name() # => "Jaguar"
+animal.greeting() # => "Jaguar says hi!"
+animal.name("Giant Squid")
+animal.greeting() # => "Giant Squid says hi!"
+
+animal.getComputed("greeting") # => (the raw computed observable object)
+```
+
